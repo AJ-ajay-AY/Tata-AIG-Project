@@ -1,7 +1,7 @@
 # Tata-AIG-Project
 Interview Project for Tata Aig
 
-## T0 run code please clone Repository and follow:-
+## To run code please clone Repository and follow:-
     1. Make sure you have python 3 and above installed
     2. create a virtual environment using venv using -> python3 -m venv /path/to/new/virtual/environment
     3. activate it using -> source /path/to/new/virtual/environment/bin/activate
