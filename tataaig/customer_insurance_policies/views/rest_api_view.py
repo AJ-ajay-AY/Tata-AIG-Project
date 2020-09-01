@@ -8,6 +8,10 @@ from customer_insurance_policies.services.userpolicy_service import UserPolicySe
 from customer_insurance_policies.utils.generic_error_responses import ErrorResponse
 
 class UserListAPI(APIView):
+    """
+    Rest API View to handle User list routes to service user_list_service()
+    Returns:- JSON response
+    """
     def get(self, request):
         try:
             userjson = UserService.user_list_service(self)
@@ -20,6 +24,10 @@ class UserListAPI(APIView):
             return ErrorResponse.json_404()
     
 class UserPolicyList(APIView):
+    """
+    Rest API View to handle Policy list for a user routes to service user_policy_list(), 
+    Returns:- JSON response
+    """
     def get(self, request, usr_id):
         try:
             userpolicy_json = UserPolicyService.user_policy_list(self, usr_id)
@@ -32,6 +40,10 @@ class UserPolicyList(APIView):
             return ErrorResponse.json_404()
 
 class PolicyDetail(APIView):
+    """
+    Rest API View to handle Policy details for a Policy routes to service policy_detail(), 
+    Returns:- JSON response
+    """
     def get(self, request, policy_id):
         try:
             policy_detail_json = PolicyService.policy_detail(self, policy_id)
@@ -44,6 +56,10 @@ class PolicyDetail(APIView):
             return ErrorResponse.json_404()
 
 class UserPolicyDump(APIView):
+    """
+    Rest API View to handle User Policy Dump (currently configured  for 3  formats  xlsx,csv and json with  minimal changes) routes to service user_policy_dump(), 
+    Returns:- HTTP response
+    """
     def get(self, request, usr_id, format_name):
         try:
             format_dict = {"xlsx":"application/xlsx", "json":"application/json", "csv":"text/csv"}

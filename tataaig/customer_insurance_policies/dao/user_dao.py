@@ -2,7 +2,9 @@ from customer_insurance_policies.models import User
 import sys
 
 class UserDao():
-
+    """
+    User DAO -> houses all the ORM queries for User retreival from Database
+    """
     def get_user_values_by_filterdict(self, filterdict, valueslist):
         try:
             if len(filterdict) and len(valueslist):

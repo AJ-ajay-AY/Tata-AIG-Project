@@ -2,7 +2,9 @@ from customer_insurance_policies.models import UserPolicy
 import sys
 
 class UserPolicyDao():
-
+    """
+    UserPolicy DAO -> houses all the ORM queries for UserPolicy retreival from Database
+    """
     def get_userpolicy_values_by_filterdict(self, filterdict, valueslist):
         try:
             if len(filterdict) and len(valueslist):

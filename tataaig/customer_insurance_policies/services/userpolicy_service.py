@@ -6,11 +6,31 @@ from customer_insurance_policies.utils.dump_file_preparation import DumpFilePrep
 class UserPolicyService():
 
     def user_policy_list(self, user_id):
+        """
+        Service which uses UserPolicy Document Object Layer(DAO) to fetch feilds in values_list and serve as a list of dictionaries
+
+        Routes to -> UserPolicyDao.get_userpolicy_values_by_filterdict(**kwargs, *args)
+        args:- user_id -> User id whose policies need to be extracted
+        return:- list of Dictionaries
+        """
+
         values_list= ['user_id' ,'policy_id', 'policy__name' , 'policy_number', 'start_date_time', 'expiry_date_time']
         userpolicy_list_dict = UserPolicyDao.get_userpolicy_values_by_filterdict(self, {'user_id':user_id}, values_list)
         return userpolicy_list_dict
 
     def user_policy_dump(self, user_id, format_name):
+        """
+        Service which uses UserPolicy Document Object Layer(DAO) to fetch feilds in values_list and serve a file of given format_name
+
+        Routes to -> UserPolicyDao.get_userpolicy_values_by_filterdict(**kwargs, *args)
+                     DumpFilePrepUtilities.data_creation_for_pandas(*args)
+                     DumpFilePrepUtilities.excel_file_obj_creation(*args)
+
+        args:- user_id -> User id whose policies need to be extracted
+               format_name -> takes in format name as string currently supports csv,json and xlsx
+        return:- file name 
+        """
+
         try:
             columns = ['User Name','User id', 'Policy id', 'Policy Name', 'Policy Number', 'Start of Policy', 'Expiry of Policy']
             width_adjust_cells = ['C:C', 'D:D', 'E:E', 'F:F']

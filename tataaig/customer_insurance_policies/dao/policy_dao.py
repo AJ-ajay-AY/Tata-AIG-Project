@@ -2,6 +2,9 @@ from customer_insurance_policies.models import Policy
 import sys
 
 class PolicyDao():
+    """
+    Policy DAO -> houses all the ORM queries for Policy retreival from Database
+    """
 
     def get_policy_values_by_filterdict(self, filterdict, valueslist):
         try:

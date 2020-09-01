@@ -50,4 +50,5 @@
 
 
 ## Error Handleing and descriptive responses in place for failures.
-
+Example:- Incorrect Format in dump file
+![User list](https://i.ibb.co/7GjM2HG/Screenshot-2020-09-01-at-1-34-16-PM.png "Policy details for a given Policy number")
