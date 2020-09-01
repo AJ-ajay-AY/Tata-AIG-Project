@@ -15,14 +15,14 @@ Interview Project for Tata Aig
         Payload Requirements  -: user_id(int)
         Rest APTcall -: user_policy/<int:usr_id>/
                         example-: http:/host:port/customer_insurance/user_policy/1/
-![Policy numbers owned by a user](https://ibb.co/VLSwFFz "Policy numbers owned by a user")
+![Policy numbers owned by a user](https://i.ibb.co/YNk0551/Screenshot-2020-09-01-at-12-22-20-PM.png "Policy numbers owned by a user")
 
 
     2. Get policy details for a given policy number:-
         Payload Requirements -:  policy_id(int)
         Rest APTcall          -:  policy_detail/<int:policy_id>/
                                   example:- http:/host:port/customer_insurance/policy_detail/3/
-![Policy details for a given Policy number](https://ibb.co/SnMs659 "Policy details for a given Policy number")
+![Policy details for a given Policy number](https://i.ibb.co/YNk0551/Screenshot-2020-09-01-at-12-22-20-PM.png "Policy details for a given Policy number")
 
     3.  Given a User and a format, get the List of Policies for the user in the prescribed format:-
         Payload Requirements -:  user_id(int), format_name(str)
