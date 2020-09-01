@@ -11,16 +11,18 @@ Interview Project for Tata Aig
 ## Api Spec Doc:-
 ### All API's tested with limited data only and rated at below 6 ms
 
-    1. Get a list of policy numbers owned by a user:-
+    1.  Get a list of policy numbers owned by a user:-
         Payload Requirements  -: user_id(int)
         Rest APTcall -: user_policy/<int:usr_id>/
                         example-: http:/host:port/customer_insurance/user_policy/1/
+![Policy numbers owned by a user](https://ibb.co/VLSwFFz "Policy numbers owned by a user")
 
 
     2. Get policy details for a given policy number:-
         Payload Requirements -:  policy_id(int)
         Rest APTcall          -:  policy_detail/<int:policy_id>/
                                   example:- http:/host:port/customer_insurance/policy_detail/3/
+![Policy details for a given Policy number](https://ibb.co/SnMs659 "Policy details for a given Policy number")
 
     3.  Given a User and a format, get the List of Policies for the user in the prescribed format:-
         Payload Requirements -:  user_id(int), format_name(str)
@@ -40,4 +42,7 @@ Interview Project for Tata Aig
        Rest APIcall          -: user_list/
                                 example :- http://host:port/customer_insurance/user_list/4/
         
+
+
+## Error Handleing and descriptive responses in place for failures.
 
