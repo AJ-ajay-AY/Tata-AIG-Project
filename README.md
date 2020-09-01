@@ -1,5 +1,4 @@
-# Tata-AIG-Project
-Interview Project for Tata Aig
+# Interview Project for Tata Aig
 
 ## To run code please clone Repository and follow:-
     1. Make sure you have python 3 and above installed
@@ -22,17 +21,22 @@ Interview Project for Tata Aig
         Payload Requirements -:  policy_id(int)
         Rest APTcall          -:  policy_detail/<int:policy_id>/
                                   example:- http:/host:port/customer_insurance/policy_detail/3/
-![Policy details for a given Policy number](https://i.ibb.co/YNk0551/Screenshot-2020-09-01-at-12-22-20-PM.png "Policy details for a given Policy number")
+![Policy details for a given Policy number](https://i.ibb.co/Ltck0Y2/Screenshot-2020-09-01-at-12-20-38-PM.png "Policy details for a given Policy number")
 
     3.  Given a User and a format, get the List of Policies for the user in the prescribed format:-
         Payload Requirements -:  user_id(int), format_name(str)
 
         Rest APIcall for csv  -:  user_policy_dump/<int:usr_id>/<str:format_name>/
                                   example:- http:/host:port/customer_insurance/user_policy_dump/1/csv/
+![Policy details for a given Policy number](https://i.ibb.co/N9MZ7Y0/Screenshot-2020-09-01-at-12-37-08-PM.png  "Policy details for a given Policy number")
+        
         Rest APIcall for json -:  user_policy_dump/<int:usr_id>/<str:format_name>/
                                   example:- http:/host:port/customer_insurance/user_policy_dump/1/json/
+![Policy details for a given Policy number](https://i.ibb.co/rQ7KGrF/Screenshot-2020-09-01-at-12-34-27-PM.png "Policy details for a given Policy number")
+
         Rest APIcall for xlsx -:  user_policy_dump/<int:usr_id>/<str:format_name>/
                                   example:- http:/host:port/customer_insurance/user_policy_dump/1/xlsx/
+![Policy details for a given Policy number](https://i.ibb.co/TK0mD5t/Screenshot-2020-09-01-at-12-50-09-PM.png "Policy details for a given Policy number")
 
         Error Handleing and descriptive responses in place for failures.
 
@@ -41,6 +45,7 @@ Interview Project for Tata Aig
 
        Rest APIcall          -: user_list/
                                 example :- http://host:port/customer_insurance/user_list/4/
+![User list](https://i.ibb.co/GVW57WC/Screenshot-2020-09-01-at-12-21-45-PM.png "Policy details for a given Policy number")
         
 
 
