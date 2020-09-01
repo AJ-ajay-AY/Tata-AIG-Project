@@ -8,7 +8,7 @@
     5. run local server -> python manage.py runsever
 
 ## Api Spec Doc:-
-### All API's tested with limited data only and rated at below 6 ms
+### All API's tested with limited data only and rated at 10-15 ms
 
     1.  Get a list of policy numbers owned by a user:-
         Payload Requirements  -: user_id(int)
