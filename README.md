@@ -1,5 +1,10 @@
 # Interview Project for Tata Aig
 
+1. Language Used    :- Python 
+2. Framework        :- Django
+3. Api Architecture :- Rest
+4. DataBase         :- Sql lite (File included for ease of testing)
+
 ## To run code please clone Repository and follow:-
     1. Make sure you have python 3 and above installed
     2. create a virtual environment using venv using -> python3 -m venv /path/to/new/virtual/environment
