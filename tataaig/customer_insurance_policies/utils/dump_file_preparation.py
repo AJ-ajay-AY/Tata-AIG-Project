@@ -15,8 +15,7 @@ class DumpFilePrepUtilities():
         return:- Dataframe
         """
         try:
-            data_list_of_tuples = [(policy['user__first_name'] ,policy['user_id'], policy['policy_id'],  policy['policy__name'], policy['policy_number'], 
-                                   datetime.strftime(policy['start_date_time'], "%d %B, %Y"), datetime.strftime(policy['expiry_date_time'],"%d %B, %Y")) 
+            data_list_of_tuples = [(policy['user__first_name'] ,policy['user_id'], policy['policy_id'],  policy['policy__name'], policy['policy_number'], policy['start_date_time'].split('T')[0],policy['expiry_date_time'].split('T')[0]) 
                                    for policy in list_of_dict]
             if (len(data_list_of_tuples[0])==len(column_names)) and len(data_list_of_tuples):
                 data_frame_result = DumpFilePrepUtilities._data_frame_generator(data_list_of_tuples, column_names)

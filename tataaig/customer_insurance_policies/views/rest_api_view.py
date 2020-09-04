@@ -1,11 +1,13 @@
 import sys
 import os
 from rest_framework.views import APIView
+from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 from customer_insurance_policies.services.user_service import UserService
 from customer_insurance_policies.services.policy_service import PolicyService
 from customer_insurance_policies.services.userpolicy_service import UserPolicyService
 from customer_insurance_policies.utils.generic_error_responses import ErrorResponse
+from customer_insurance_policies.utils.rest_api_consumer import RestAPIConsumingUtilities
 
 class UserListAPI(APIView):
     """
@@ -62,9 +64,12 @@ class UserPolicyDump(APIView):
     """
     def get(self, request, usr_id, format_name):
         try:
+            response, result, message= RestAPIConsumingUtilities.rest_response_fetch(f"{settings.SERVER1_URL}customer_insurance/user_policy/{usr_id}")
+            if not result:
+                return ErrorResponse.json_500(message)
             format_dict = {"xlsx":"application/xlsx", "json":"application/json", "csv":"text/csv"}
             if format_name in format_dict:
-                file_obj_name, result, message = UserPolicyService.user_policy_dump(self, usr_id, format_name)
+                file_obj_name, result, message = UserPolicyService.user_policy_dump(self, usr_id, format_name, response['data'])
                 if file_obj_name:
                     with open(file_obj_name, "rb") as file:
                         data = file.read()

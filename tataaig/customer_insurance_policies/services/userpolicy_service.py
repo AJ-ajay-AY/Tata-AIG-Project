@@ -14,11 +14,11 @@ class UserPolicyService():
         return:- list of Dictionaries
         """
 
-        values_list= ['user_id' ,'policy_id', 'policy__name' , 'policy_number', 'start_date_time', 'expiry_date_time']
+        values_list= ['user__first_name' ,'user_id' ,'policy_id', 'policy__name' , 'policy_number', 'start_date_time', 'expiry_date_time']
         userpolicy_list_dict = UserPolicyDao.get_userpolicy_values_by_filterdict(self, {'user_id':user_id}, values_list)
         return userpolicy_list_dict
 
-    def user_policy_dump(self, user_id, format_name):
+    def user_policy_dump(self, user_id, format_name, userpolicy_list_dict):
         """
         Service which uses UserPolicy Document Object Layer(DAO) to fetch feilds in values_list and serve a file of given format_name
 
@@ -34,8 +34,6 @@ class UserPolicyService():
         try:
             columns = ['User Name','User id', 'Policy id', 'Policy Name', 'Policy Number', 'Start of Policy', 'Expiry of Policy']
             width_adjust_cells = ['C:C', 'D:D', 'E:E', 'F:F']
-            values_list= ['user__first_name' ,'user_id' ,'policy_id', 'policy__name' , 'policy_number', 'start_date_time', 'expiry_date_time']
-            userpolicy_list_dict = UserPolicyDao.get_userpolicy_values_by_filterdict(self, {'user_id':user_id}, values_list)
             file_name = f"UserPolicies-{userpolicy_list_dict[0]['user_id']}-{userpolicy_list_dict[0]['user__first_name']}"
             data_frame_result, result, message = DumpFilePrepUtilities.data_creation_for_pandas(userpolicy_list_dict, columns)
             if result:
